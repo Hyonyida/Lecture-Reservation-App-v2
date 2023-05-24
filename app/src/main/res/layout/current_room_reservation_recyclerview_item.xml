@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewReservationDateTime3"
+        style="@style/RecyclerViewTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Date:"
+        android:textColor="#090909"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewReservationDateTime4"
+        style="@style/RecyclerViewTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:text="Location:"
+        android:textColor="#070707"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewReservationDateTime"
+        style="@style/RecyclerViewTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textColor="#070707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewReservationBuildingRoomNumber"
+        style="@style/RecyclerViewSubTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="#070707"
+        app:layout_constraintStart_toStartOf="@+id/textViewReservationDateTime"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReservationDateTime" />
+
+    <ImageView
+        android:id="@+id/imageViewReservationComputer"
+        style="@style/ImageViews"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:contentDescription="@string/computer"
+        app:layout_constraintEnd_toStartOf="@id/imageViewReservationEngineering"
+        app:layout_constraintTop_toTopOf="@+id/textViewReservationBuildingRoomNumber" />
+
+    <ImageView
+        android:id="@+id/imageViewReservationWifi"
+        style="@style/ImageViews"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:contentDescription="@string/wifi"
+        app:layout_constraintEnd_toStartOf="@id/imageViewReservationComputer"
+        app:layout_constraintTop_toTopOf="@+id/textViewReservationBuildingRoomNumber" />
+
+    <ImageView
+        android:id="@+id/imageViewReservationEngineering"
+        style="@style/ImageViews"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/engineering"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewReservationBuildingRoomNumber" />
+</androidx.constraintlayout.widget.ConstraintLayout>

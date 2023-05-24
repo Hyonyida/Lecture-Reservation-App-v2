@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/belleza"
+        android:text="@string/current_room_reservations"
+        android:background="@color/colorButton"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:paddingVertical="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarStudent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReservations"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"/>
+
+    <TextView
+        android:id="@+id/textViewNoRoomReservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_room_reservations"
+        android:textAlignment="center"
+        android:layout_marginVertical="20dp"
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/reserveRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="@string/reserve_room"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+    <!--<androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />-->
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/bookReservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/belleza"
+        android:text="@string/current_book_reservations"
+        android:background="@color/colorButton"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:paddingVertical="3dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBookReservations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewNoBookReservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:text="@string/no_book_reservations"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/reserveBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reserve_book"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

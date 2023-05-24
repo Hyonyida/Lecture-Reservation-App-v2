@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:useDefaultMargins="true"
+        android:columnCount="2"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="25dp"
+        tools:context=".RegistrationActivity">
+
+        <TextView
+            android:id="@+id/course"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/course" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1">
+
+            <RadioButton
+                android:id="@+id/radioButtonUnix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unix" />
+
+            <RadioButton
+                android:id="@+id/radioButtonC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Cplus" />
+
+            <RadioButton
+                android:id="@+id/radioButtonJava"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/java" />
+
+            <RadioButton
+                android:id="@+id/radioButtonHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history" />
+
+            <RadioButton
+                android:id="@+id/radioButtonEconomics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/economics" />
+
+            <RadioButton
+                android:id="@+id/radioButtonEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/english" />
+
+            <RadioButton
+                android:id="@+id/radioButtonRam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/RAM" />
+
+            <RadioButton
+                android:id="@+id/radioButtonScience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/science" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/math" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/bookName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="@string/book_name" />
+
+        <EditText
+            android:id="@+id/editBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="@string/author" />
+
+        <EditText
+            android:id="@+id/editAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/txtIsbn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="@string/isbn" />
+
+        <EditText
+            android:id="@+id/editISBN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnAddBook"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:text="@string/add_book" />
+
+    </GridLayout>
+</ScrollView>

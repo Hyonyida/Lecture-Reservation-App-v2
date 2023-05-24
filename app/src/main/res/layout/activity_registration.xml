@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:useDefaultMargins="true"
+    android:columnCount="1"
+    android:layout_marginHorizontal="40dp"
+    android:layout_marginTop="100dp"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:textSize="26sp"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/please_register" />
+    <EditText
+        android:id="@+id/rName"
+        android:layout_gravity="fill_horizontal"
+        android:hint="@string/r_name"
+        android:inputType="textPersonName"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/studentId"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="text"
+        android:hint="@string/student_id"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="textEmailAddress"
+        android:hint="@string/e_mail"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <Spinner
+        android:id="@+id/spinner_user_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnRegister"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/register"
+        android:layout_marginBottom="10dp" />
+
+    <!--<RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/professor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professor" />
+
+        <RadioButton
+            android:id="@+id/student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student" />
+
+        <RadioButton
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin" />
+        <RadioButton
+            android:id="@+id/librarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Librarian" />
+    </RadioGroup>-->
+
+
+</GridLayout>

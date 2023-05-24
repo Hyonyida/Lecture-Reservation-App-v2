@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.libraryreservationapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ViewReviews"></activity>
+        <activity android:name=".RoomsRating" />
+        <activity android:name=".RequestBookActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".UpdateApproveRequestActivity" />
+        <activity android:name=".SeeRequestActivity" />
+        <activity android:name=".UpdateDeleteBookActivity" />
+        <activity android:name=".AddBookActivity" />
+        <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SeeAccountsListActivity" />
+        <activity android:name=".DisableAccountActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddRoomActivity" />
+        <activity android:name=".UpdateDeleteRoomActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+        <receiver android:name=".AlertReceiver_ehez"/>
+        <receiver android:name=".AlertReceiver_DeleteReservation" />
+        <receiver android:name=".AlertReceiver_DeleteBookReservation" />
+
+        <service
+            android:name=".MyFireBaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

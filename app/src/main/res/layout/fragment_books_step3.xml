@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:columnCount="2"
+    android:useDefaultMargins="true">
+
+    <TextView
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/belleza"
+        android:text="Confirm Your Reservation"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="15dp"
+        />
+
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_event_note_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_date_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="08/03/2019"
+        android:textSize="25sp" />
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_access_time_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_time_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="10:00a-10:30a"
+        android:textSize="25sp" />
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_book_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_book_title_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal|bottom"
+        android:text="Title of book goes here"
+        android:textSize="25sp"/>
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_person_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_author_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="Author Name"
+        android:textSize="25sp" />
+
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorButton"
+        android:fontFamily="@font/belleza"
+        android:text="CONFIRM"
+        android:textColor="@android:color/white"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal|center_horizontal"/>
+
+</GridLayout>

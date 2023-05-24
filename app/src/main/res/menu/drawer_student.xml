@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_reserve_room"
+            android:icon="@drawable/ic_baseline_meeting_room_24"
+            android:title="@string/reserve_room" />
+        <item
+            android:id="@+id/nav_reserve_book"
+            android:icon="@drawable/ic_baseline_book_24"
+            android:title="@string/reserve_book" />
+    </group>
+
+    <item android:title="OTHER">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+</menu>

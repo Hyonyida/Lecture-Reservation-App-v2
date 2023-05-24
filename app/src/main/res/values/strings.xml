@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">강의실 빌리겠습니다</string>
+    <string name="project_name">Lecture Reservation</string>
+    <string name="words_logo">Word Logo</string>
+
+    <!-- Registration Page   -->
+    <string name="please_register">회원가입</string>
+    <string name="r_name">이름</string>
+    <string name="student_id">학번</string>
+    <string name="e_mail">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="register">회원가입</string>
+    <string-array name="user_types">
+        <item>Student</item>
+        <item>Admin</item>
+    </string-array>
+
+    <!-- Login Page   -->
+    <string name="please_login">로그인</string>
+    <string name="loginBtn">로그인</string>
+    <string name="create_account">사용 중인 계정이 없다면?</string>
+
+    <!-- Logout   -->
+    <string name="logout">로그아웃</string>
+
+    <!-- Add Room   -->
+    <string name="add_room">강의실 추가</string>
+    <string name="capacity">수용 인원</string>
+    <string name="engineering">실험장비</string>
+    <string name="wifi">Wi-fi</string>
+    <string name="computer">컴퓨터</string>
+    <string name="building">건물 이름</string>
+    <string name="room_number">강의실 번호</string>
+    <string name="nurigan">누리관</string>
+    <string name="hyangpagan">향파관</string>
+
+    <!-- Update/Delete Room   -->
+    <string name="update_room">추가</string>
+    <string name="delete_room">삭제</string>
+    <string name="available">사용 가능</string>
+
+    <!-- Delete Room Dialog   -->
+    <string name="delete_room_message">Confirm deletion</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+
+    <!-- Add Book -->
+    <string name="add_book">Add Book</string>
+    <string name="book_name">Title</string>
+    <string name="author">Author</string>
+    <string name="isbnNN">ISBN</string>
+    <string name="course">Courses</string>
+    <string name="unix">BCS 215</string>
+    <string name="Cplus">BCS 230</string>
+    <string name="math">MTH 110</string>
+    <string name="history">HIS 121</string>
+    <string name="economics">ECO 156</string>
+    <string name="english">EGL 101</string>
+    <string name="RAM">RAM 101</string>
+    <string name="science">PHY 117</string>
+    <string name="movie">MLG 302</string>
+    <string name="java">BCS 345</string>
+    <string name="book_s_request">Book\'s Request:</string>
+    <string name="request">Request</string>
+    <string name="clear">Clear</string>
+    <string name="book_s_name">Book\'s Name</string>
+    <string name="class_name">Class Name</string>
+    <string name="isbn">ISBN</string>
+    <string name="quantity">Quantity</string>
+    <string name="booksNamee">Book\'s Name:</string>
+    <string name="classNamee">Class Name:</string>
+    <string name="isbnN">ISBN:</string>
+    <string name="quantityY">Quantity:</string>
+
+    <!-- Update / Delete Book -->
+    <string name="update_book">Update Book</string>
+    <string name="delete_book">Delete Book</string>
+    <string name="availability">Available</string>
+
+    <!-- Request -->
+    <string name="see_request">See Book Requests</string>
+    <string name="approve_request">Approve Request</string>
+    <string name="deny">Deny Request</string>
+    <string name="go_backk">go_backk</string>
+    <string name="Back">back</string>
+    <string name="go_back">go_back</string>
+    <string name="check_orders">Check Orders</string>
+    <string name="home">Home</string>
+
+
+    <!-- Student Home   -->
+    <string name="current_room_reservations">내가 예약한 강의실</string>
+    <string name="no_room_reservations">예약한 강의실이 없습니다</string>
+    <string name="make_room_reservation">강의실 예약</string>
+
+    <!-- CheckIn/CheckOut    -->
+    <string name="check_in">이용 시작</string>
+    <string name="check_out">이용 종료</string>
+    <string name="check_in_question">예약한 강의실 이용을 시작하시겠습니까?</string>
+    <string name="check_in_question_book">Would you like to check into the book reservation?</string>
+    <string name="check_out_question">강의실 이용을 종료하시겠습니까?</string>
+    <string name="check_out_question_book">Would you like to check out of the book reservation?</string>
+
+    <!-- Accounts   -->
+    <string name="see_accounts">모든 계정 보기</string>
+    <string name="name">이름 :</string>
+    <string name="disable">Disable</string>
+    <string name="disabled"> - DISABLED</string>
+    <string name="enable">Enable</string>
+    <string name="studentID">학번 :</string>
+    <string name="role">역할:</string>
+    <string name="email">이메일 :</string>
+    <string name="update_account">수정</string>
+    <string name="account_info">계정 정보 :</string>
+
+    <!--Reserve a Room-->
+    <string name="closed">Closed</string>
+    <string name="SeeReviews">See Reviews</string>
+    <string name="room_reviews">Room Reviews</string>
+
+    <!-- Student Nav Drawer    -->
+    <string name="reserve_room">강의실 예약</string>
+    <string name="reserve_book">Reserve Book</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    <string name="reason_disable">Reason for Disabling</string>
+    <string name="reason_enable">Reason for Enabling</string>
+    <string name="current_book_reservations">Current Book Reservations</string>
+    <string name="no_book_reservations">No upcoming book reservations!</string>
+
+</resources>

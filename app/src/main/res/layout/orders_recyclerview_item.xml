@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/textViewCourse"
+        style="@style/RecyclerViewTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FA3C3C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        style="@style/RecyclerViewSubTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textViewCourse"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCourse" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        style="@style/RecyclerViewSubTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewIsbn"
+        style="@style/RecyclerViewSubTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textViewCourse"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCourse" />
+
+    <TextView
+        android:id="@+id/textViewQuantity"
+        style="@style/RecyclerViewSubTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textViewCourse"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCourse" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

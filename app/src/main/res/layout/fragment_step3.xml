@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:columnCount="2"
+    android:useDefaultMargins="true"
+    android:layout_marginHorizontal="40dp"
+    android:layout_marginTop="90dp">
+
+    <TextView
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/belleza"
+        android:text="예약 확인"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="15dp"
+        />
+
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_event_note_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_date_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="08/03/2019"
+        android:textSize="25sp" />
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_access_time_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_time_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="10:00a-10:30a"
+        android:textSize="25sp" />
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_location_city_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_building_text"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="Building"
+        android:textSize="25sp"/>
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_sensor_door_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_reservation_room_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="Room"
+        android:textSize="25sp" />
+
+    <ImageView app:srcCompat="@drawable/ic_baseline_groups_40"
+        app:tint="@color/colorPrimary"
+        android:paddingLeft="15dp"/>
+
+
+
+    <TextView
+        android:id="@+id/txt_reservation_capacity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/belleza"
+        android:text="Capacity"
+        android:textSize="25sp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/img_computer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            app:srcCompat="@drawable/ic_baseline_desktop_mac_40" />
+
+        <ImageView
+            android:id="@+id/img_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            app:srcCompat="@drawable/ic_baseline_wifi_40" />
+
+        <ImageView
+            android:id="@+id/img_whiteboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingHorizontal="12dp"
+            app:srcCompat="@drawable/ic_baseline_crop_16_9_40" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorButton"
+        android:fontFamily="@font/belleza"
+        android:text="CONFIRM"
+        android:textColor="@android:color/white"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal|center_horizontal"/>
+
+</GridLayout>

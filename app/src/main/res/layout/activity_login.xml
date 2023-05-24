@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:useDefaultMargins="true"
+    android:columnCount="1"
+    android:layout_marginHorizontal="40dp"
+    android:layout_marginTop="125dp">
+
+    <TextView
+        android:textSize="26sp"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/please_login" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="textEmailAddress"
+        android:hint="@string/e_mail"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/loginBtn"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/create_account"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="10dp" />
+
+</GridLayout>
