@@ -101,7 +101,7 @@ public class Step3Fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //apply format to date display
-        simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/");
 
         localBroadcastManager = LocalBroadcastManager.getInstance(getContext());
         localBroadcastManager.registerReceiver(confirmReservationReceiver, new IntentFilter(Common.KEY_CONFIRM_RESERVATION));
@@ -128,7 +128,7 @@ public class Step3Fragment extends Fragment {
 
         img_computer = itemView.findViewById(R.id.img_computer);
         img_wifi = itemView.findViewById(R.id.img_wifi);
-        img_engineering = itemView.findViewById(R.id.img_whiteboard);
+        img_engineering = itemView.findViewById(R.id.img_engineering);
 
         btn_confirm = itemView.findViewById(R.id.btn_confirm);
 
@@ -234,7 +234,7 @@ public class Step3Fragment extends Fragment {
 
                                 //pops the backstack to return to the homescreen
                                 getActivity().getSupportFragmentManager().popBackStack();
-                                Toast.makeText(getContext(), "Reservation Confirmed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "예약 되었습니다!", Toast.LENGTH_SHORT).show();
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {

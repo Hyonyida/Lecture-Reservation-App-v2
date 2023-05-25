@@ -17,9 +17,8 @@
         <TextView
             android:id="@+id/txt_time_slot"
             android:text="9:00a-9:30a"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:fontFamily="@font/belleza"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -30,7 +29,6 @@
             android:layout_marginTop="5dp"
             android:textSize="16sp"
             android:textStyle="italic"
-            android:fontFamily="@font/belleza"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

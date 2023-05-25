@@ -147,7 +147,7 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
         localBroadcastManager = LocalBroadcastManager.getInstance(getContext());
         localBroadcastManager.registerReceiver(displayTimeSlot, new IntentFilter(Common.KEY_DISPLAY_TIME_SLOT));
 
-        simpleDateFormat = new SimpleDateFormat("MM_dd_yyyy");
+        simpleDateFormat = new SimpleDateFormat("yyyy_MM_dd");
 
         dialog = new SpotsDialog.Builder().setContext(getContext()).setCancelable(false).build();
 

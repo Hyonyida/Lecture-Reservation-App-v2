@@ -30,7 +30,7 @@ public class Common {
     public static final String KEY_BOOK_SELECTED = "BOOK_SELECTED";
     public static final String KEY_ENABLE_BUTTON_NEXT = "KEY_ENABLE_BUTTON_NEXT";
     public static final String KEY_ENABLE_BOOK_BUTTON_NEXT = "KEY_ENABLE_BOOK_BUTTON_NEXT";
-    public static final int TIME_SLOT_TOTAL = 20;
+    public static final int TIME_SLOT_TOTAL = 14;
     public static final int BOOK_TIME_SLOT_TOTAL = 20;
     public static final Object DISABLE_TAG = "DISABLE";
     public static final Object BOOK_DISABLE_TAG = "DISABLE";
@@ -49,7 +49,7 @@ public class Common {
     public static int currentBookTimeSlot =-1;
     public static Calendar currentDate = Calendar.getInstance();
     public static Calendar currentBookDate = Calendar.getInstance();
-    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM_dd_yyyy"); // only use it when needed for key
+    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy_MM_dd"); // only use it when needed for key
     public static String userID;
 
 
@@ -62,7 +62,7 @@ public class Common {
         else if (slot == 2 && (LocalTime.now().isBefore(LocalTime.parse("11:00"))  || isDayAfterToday()))
             return "10:00AM - 11:00AM";
         else if (slot == 3 && (LocalTime.now().isBefore(LocalTime.parse("12:00"))  || isDayAfterToday()))
-            return "11:00PM - 12:00PM";
+            return "11:00AM - 12:00PM";
         else if (slot == 4 && (LocalTime.now().isBefore(LocalTime.parse("13:00"))  || isDayAfterToday()))
             return "12:00PM - 13:00PM";
         else if (slot == 5 && (LocalTime.now().isBefore(LocalTime.parse("14:00"))  || isDayAfterToday()))

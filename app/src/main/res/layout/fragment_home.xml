@@ -10,7 +10,6 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/belleza"
         android:text="@string/current_room_reservations"
         android:background="@color/colorButton"
         android:textColor="@color/white"

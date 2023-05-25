@@ -81,8 +81,8 @@ public class RoomReservationAdapter extends FirestoreRecyclerAdapter<RoomReserva
     protected void onBindViewHolder(@NonNull final RoomReservationAdapter.MyViewHolder myViewHolder, int i, @NonNull RoomReservationInformation info) {
 
         // Puts the information into the textViews for the position (i)
-        myViewHolder.dateTimeTextView.setText(info.getDate() + " at " + info.getTime());
-        myViewHolder.buildingRoomNumberTextView.setText(info.getBuilding() + " 강의실 : " + info.getRoomNumber());
+        myViewHolder.dateTimeTextView.setText(info.getDate() + ", " + info.getTime());
+        myViewHolder.buildingRoomNumberTextView.setText(info.getBuilding() + " 강의실 번호  - " + info.getRoomNumber());
 
         myViewHolder.fStore.collection("room").document(info.getRoomId()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
 ////        myViewHolder.fStore.collection("room").document("HB4SZJsxEeymqpbRsYp9").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -93,32 +93,38 @@ public class RoomReservationAdapter extends FirestoreRecyclerAdapter<RoomReserva
                    DocumentSnapshot documentSnapshot = task.getResult();
                    //gets the info about the room that was reserved
                    Boolean wifi = (Boolean) documentSnapshot.get("wifi");
-                   Boolean whiteboard = (Boolean) documentSnapshot.get("whiteboard");
+                   Boolean engineering = (Boolean) documentSnapshot.get("engineering");
                    Boolean computer = (Boolean) documentSnapshot.get("computer");
 
                    //puts the correct image depending on if the wifi value is true or false for the room
-                   if(wifi){
-                       myViewHolder.wifiImageView.setImageResource(R.drawable.ic_baseline_wifi_24_green);
-                   }
-                   else{
-                       myViewHolder.wifiImageView.setImageResource(R.drawable.ic_baseline_wifi_24_black);
+                   if (wifi != null) {
+                       if (wifi) {
+                           myViewHolder.wifiImageView.setImageResource(R.drawable.ic_baseline_wifi_24_green);
+                       } else {
+                           myViewHolder.wifiImageView.setImageResource(R.drawable.ic_baseline_wifi_24_black);
+                       }
                    }
 
                    //puts the correct image depending on if the computer value is true or false for the room
-                   if(computer){
-                       myViewHolder.computerImageView.setImageResource(R.drawable.ic_baseline_laptop_chromebook_24_green);
-                   }
-                   else{
-                       myViewHolder.computerImageView.setImageResource(R.drawable.ic_baseline_laptop_chromebook_24_black);
+                   if (computer != null) {
+                       if(computer){
+                           myViewHolder.computerImageView.setImageResource(R.drawable.ic_baseline_laptop_chromebook_24_green);
+                       }
+                       else{
+                           myViewHolder.computerImageView.setImageResource(R.drawable.ic_baseline_laptop_chromebook_24_black);
+                       }
                    }
 
                    //puts the correct image depending on if the whiteboard value is true or false for the room
-                   if(whiteboard){
-                       myViewHolder.engineeringImageView.setImageResource(R.drawable.ic_baseline_engineering_24_green);
+                   if (engineering != null) {
+                       if(engineering){
+                           myViewHolder.engineeringImageView.setImageResource(R.drawable.ic_baseline_engineering_24_green);
+                       }
+                       else{
+                           myViewHolder.engineeringImageView.setImageResource(R.drawable.ic_baseline_engineering_24_black);
+                       }
                    }
-                   else{
-                       myViewHolder.engineeringImageView.setImageResource(R.drawable.ic_baseline_engineering_24_black);
-                   }
+
                }
                else{
                    Log.d("MYDEBUG", "The room was not found in the database");
