@@ -69,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 String pwdX = password.getText().toString();
                 int flags = 0;
 
-                if(rX.length() < 3 || rX.length() > 30){
+                if(rX.length() > 4 || rX.length() < 2 ){
                     rName.setError("2 ~ 4글자를 입력해주세요");
                     flags++;
                 }
@@ -85,7 +85,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 if(pwdX.length() < 6){
-                    password.setError("Must be at least 6 characters");
+                    password.setError("6글자 이상 입력해주세요");
                     flags++;
                 }
 
@@ -116,7 +116,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 Toast.makeText(RegistrationActivity.this, "회원가입을 실패했습니다: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Toast.makeText(RegistrationActivity.this, "계정을 생성하였습니다!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistrationActivity.this, "계정을 생성하였습니다", Toast.LENGTH_SHORT).show();
 
                                 //Add user information to Firestore
                                 userID = mFirebaseAuth.getCurrentUser().getUid();

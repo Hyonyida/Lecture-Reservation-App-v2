@@ -12,12 +12,6 @@
 
         <activity android:name=".ViewReviews"></activity>
         <activity android:name=".RoomsRating" />
-        <activity android:name=".RequestBookActivity" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".UpdateApproveRequestActivity" />
-        <activity android:name=".SeeRequestActivity" />
-        <activity android:name=".UpdateDeleteBookActivity" />
-        <activity android:name=".AddBookActivity" />
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".HomeActivity"

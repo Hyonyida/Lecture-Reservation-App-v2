@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 if(pwdX.length() < 6){
-                    password.setError("Must be at least 6 characters");
+                    password.setError("6글자 이상 입력해주세요");
                     flags++;
                 }
 

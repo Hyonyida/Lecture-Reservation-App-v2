@@ -106,7 +106,7 @@ public class RoomsRating extends AppCompatActivity {
                 String test_review = txtReviewRoom.getText().toString().trim();
                 if(test_review.equals("")) {
                     flags++;
-                    txtReviewRoom.setError("Please write a review");
+                    txtReviewRoom.setError("관리자에게 전달 사항이 있다면 적어주세요");
                 } else { String review  = txtReviewRoom.getText().toString().trim(); }
 
 //-----------------------------------------------------------------------------------------------------------------

@@ -23,6 +23,9 @@
     <!-- Logout   -->
     <string name="logout">로그아웃</string>
 
+    <!-- my page -->
+    <string name = "mypage">마이 페이지</string>
+
     <!-- Add Room   -->
     <string name="add_room">강의실 추가</string>
     <string name="capacity">수용 인원</string>
@@ -41,8 +44,8 @@
 
     <!-- Delete Room Dialog   -->
     <string name="delete_room_message">Confirm deletion</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
 
     <!-- Add Book -->
     <string name="add_book">Add Book</string>
@@ -104,9 +107,9 @@
     <!-- Accounts   -->
     <string name="see_accounts">모든 계정 보기</string>
     <string name="name">이름 :</string>
-    <string name="disable">Disable</string>
-    <string name="disabled"> - DISABLED</string>
-    <string name="enable">Enable</string>
+    <string name="disable">사용 중지</string>
+    <string name="disabled"> - 사용 중지</string>
+    <string name="enable">사용 가능</string>
     <string name="studentID">학번 :</string>
     <string name="role">역할:</string>
     <string name="email">이메일 :</string>
@@ -114,13 +117,13 @@
     <string name="account_info">계정 정보 :</string>
 
     <!--Reserve a Room-->
-    <string name="closed">Closed</string>
+    <string name="closed">예약 마감</string>
     <string name="SeeReviews">See Reviews</string>
-    <string name="room_reviews">Room Reviews</string>
+    <string name="room_reviews">강의실 리뷰</string>
 
     <!-- Student Nav Drawer    -->
     <string name="reserve_room">강의실 예약</string>
-    <string name="reserve_book">Reserve Book</string>
+    <string name="reserve_book">자유 게시판</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
 

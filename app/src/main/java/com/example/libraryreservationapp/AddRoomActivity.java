@@ -83,7 +83,7 @@ public class AddRoomActivity extends AppCompatActivity {
         if(sRoomNumber.equals("")){
             //adds a flag and an error message
             flags++;
-            roomNumberEditText.setError("Please enter a numeric room number");
+            roomNumberEditText.setError("강의실 번호를 입력해주세요");
         }
         else{
             //converts the string to an integer

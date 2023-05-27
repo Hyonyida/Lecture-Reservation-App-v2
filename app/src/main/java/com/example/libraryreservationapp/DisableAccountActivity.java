@@ -103,10 +103,10 @@ public class DisableAccountActivity extends AppCompatActivity implements Disable
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Update was successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "회원정보가 수정되었습니다", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "Update failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "회원정보가 수정되지 않았습니다", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -197,12 +197,12 @@ public class DisableAccountActivity extends AppCompatActivity implements Disable
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "The account was successfully changed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "계정이 수정되었습니다", Toast.LENGTH_SHORT).show();
                     //closes the activity
                     finish();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "Update failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "수정되지 않았습니다", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -93,9 +93,9 @@ public class HomeActivity extends AppCompatActivity {
                             //sets the menu item of the reserve room to checked
                             navigationView.setCheckedItem(R.id.nav_reserve_room);
                         }
-                        if (current instanceof ReserveBookFragment){
+                        if (current instanceof BoardFragment){
                             //sets the menu item of the reserve book to checked
-                            navigationView.setCheckedItem(R.id.nav_reserve_book);
+                            navigationView.setCheckedItem(R.id.nav_board);
                         }
                     }
                 });
@@ -171,8 +171,8 @@ public class HomeActivity extends AppCompatActivity {
                         //replaces the fragment with the home fragment
                         ft.replace(R.id.fragment_container, new ReserveRoomFragment()).addToBackStack("parent").commit();
                         break;
-                    case R.id.nav_reserve_book:
-                        ft.replace(R.id.fragment_container, new ReserveBookFragment()).addToBackStack("parent").commit();
+                    case R.id.nav_board:
+                        ft.replace(R.id.fragment_container, new BoardFragment()).addToBackStack("parent").commit();
                         break;
                 }
                 //closes the drawer

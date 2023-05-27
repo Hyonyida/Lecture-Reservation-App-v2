@@ -50,7 +50,6 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
     private TextView textViewNoRooms, textViewNoBooks;
     private Button btnReserveRoom, btnReserveBook;
     private RoomReservationAdapter adapter;
-    private BookReservationAdapter booksAdapter;
     private FirebaseFirestore fStore;
     private FirebaseAuth auth;
     private String userID;
@@ -93,17 +92,6 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
             }
         });
 
-        btnReserveBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //for the fragments to be replaced when items are selected in the drawer
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                //replaces the fragment with the home fragment
-                ft.replace(R.id.fragment_container, new ReserveBookFragment()).addToBackStack("parent").commit();
-            }
-        });
-
         //creates an alarm reciever that if an alarm is received, it will run checkForReservations
         BroadcastReceiver alarm_receiver = new BroadcastReceiver() {
             @Override
@@ -132,11 +120,9 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
         // creates configurations for the adapter and binds the query to the recyclerView
         // .setLifecycleOwner(this) allows for deletion of onStart and onStop overrides
         FirestoreRecyclerOptions<RoomReservationInformation> options = new FirestoreRecyclerOptions.Builder<RoomReservationInformation>().setQuery(query, RoomReservationInformation.class).setLifecycleOwner(this).build();
-        FirestoreRecyclerOptions<BookReservationInformation> options2 = new FirestoreRecyclerOptions.Builder<BookReservationInformation>().setQuery(booksQuery, BookReservationInformation.class).setLifecycleOwner(this).build();
 
         // sets the adapter with the configurations that were just made
         adapter = new RoomReservationAdapter(options);
-        booksAdapter = new BookReservationAdapter(options2);
 
         // sets the layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -155,7 +141,7 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
         //adds horizontal line between different items
         booksRecyclerView.addItemDecoration(new DividerItemDecoration(booksRecyclerView.getContext(), DividerItemDecoration.VERTICAL));
         // sets the adapter
-        booksRecyclerView.setAdapter(booksAdapter);
+
 
         //listens on the roomReservation adapter
         adapter.setOnItemClickListener(new RoomReservationAdapter.RoomReservationAdapterListener() {
@@ -212,63 +198,6 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
 
             }
         });
-
-
-        //listens on the bookReservation adapter
-        booksAdapter.setOnItemClickListener(new BookReservationAdapter.BookReservationAdapterListener() {
-            @Override
-            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-                //gets the documentID of the item clicked
-                bookDocID = documentSnapshot.getReference().getId();
-                //creates a reference to a specific document in the subcollection of the user
-                bookResRef = fStore.collection("users").document(userID).collection("currentBookReservations").document(bookDocID);
-
-                //gets the value of checkedIn
-                bookResRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.isSuccessful()) {
-                            //gets the document
-                            DocumentSnapshot document = task.getResult();
-
-                            //gets the value of the time that the reservation is at
-                            String time = document.getString("time");
-                            String date = document.getString("date");
-                            //gets the value from the database for that individual room that was clicked on
-                            boolean checkedIn = document.getBoolean("checkedIn");
-
-                            //if checkedIn is true show the dialog
-                            if(checkedIn){
-                                showDialog(checkedIn, 1);
-                            }
-                            //if checkedIn is false
-                            else{
-                                //gets the reservation calendar by calling translateTimeAndDate
-                                Calendar reservationCal = translateTimeAndDate(time, date);
-
-                                //value returned by compareTimes which compares the current time and the reservationTime
-                                boolean compareTime = compareTimes(reservationCal);
-
-                                //if the time is within the time frame of reservation and reservationPlus15
-                                if(compareTime){
-                                    //show the dialog
-                                    showDialog(checkedIn, 1);
-                                }
-                                else{
-                                    //Give a toast saying that you cannot checkin yet
-                                    Toast.makeText(getContext(), "You cannot checkin yet", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                        }
-                        else{
-                            Log.d("MYDEBUG", "Couldn't get value of checkedIn for that book");
-                        }
-                    }
-                });
-
-            }
-        });
     }
 
     //what occurs when the fragment is resumed
@@ -309,7 +238,7 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "이용 시작", Toast.LENGTH_SHORT).show();
                     }
                     else{
                         Toast.makeText(getContext(), "Couldn't check you in/out", Toast.LENGTH_SHORT).show();

@@ -101,7 +101,7 @@ public class Step3Fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //apply format to date display
-        simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/");
+        simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
         localBroadcastManager = LocalBroadcastManager.getInstance(getContext());
         localBroadcastManager.registerReceiver(confirmReservationReceiver, new IntentFilter(Common.KEY_CONFIRM_RESERVATION));
@@ -234,7 +234,7 @@ public class Step3Fragment extends Fragment {
 
                                 //pops the backstack to return to the homescreen
                                 getActivity().getSupportFragmentManager().popBackStack();
-                                Toast.makeText(getContext(), "예약 되었습니다!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "예약 되었습니다", Toast.LENGTH_SHORT).show();
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {

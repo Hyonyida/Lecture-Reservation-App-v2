@@ -75,6 +75,8 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
         }
     };
 
+    private int totalCapacity; // totalCapacity 변수 추가
+
     private void loadAvailableTimeSlotOfRoom(int roomNumber, final String reservationDate) {
         dialog.show();
 
@@ -86,11 +88,11 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
         roomDoc.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     DocumentSnapshot documentSnapshot = task.getResult();
-                    if(documentSnapshot.exists()) //if room available
+                    if (documentSnapshot.exists()) // if room available
                     {
-                        //get information of reservation
+                        // get information of reservation
                         // if not created, return empty
                         CollectionReference date = FirebaseFirestore.getInstance().collection("room")
                                 .document(Common.currentRoom.getRoomId()).collection(reservationDate);
@@ -98,19 +100,24 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
                         date.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful())
-                                {
+                                if (task.isSuccessful()) {
                                     QuerySnapshot querySnapshot = task.getResult();
-                                    if (querySnapshot.isEmpty()) //if no reservations
+                                    if (querySnapshot.isEmpty()) // if no reservations
                                     {
                                         timeSlotLoadListener.onTimeSlotLoadEmpty();
-                                    } else //if there are reservations
+                                    } else // if there are reservations
                                     {
                                         List<TimeSlot> timeSlots = new ArrayList<>(); // list of time slots that are full
-                                        for (QueryDocumentSnapshot document:task.getResult()) {
-
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
                                             timeSlots.add(document.toObject(TimeSlot.class));
                                         }
+
+                                        // Get the capacity from the room document
+                                        totalCapacity = documentSnapshot.getLong("capacity").intValue();
+
+                                        // Pass the totalCapacity to the adapter
+                                        TimeSlotAdapter adapter = new TimeSlotAdapter(getContext(), timeSlots, totalCapacity);
+                                        recycler_time_slot.setAdapter(adapter);
 
                                         timeSlotLoadListener.onTimeSlotLoadSuccess(timeSlots);
                                     }
@@ -129,6 +136,7 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
             }
         });
     }
+
 
     static Step2Fragment instance;
 
@@ -221,9 +229,10 @@ public class Step2Fragment extends Fragment implements TimeSlotLoadListener {
 
     @Override
     public void onTimeSlotLoadEmpty() {
-        TimeSlotAdapter adapter = new TimeSlotAdapter(getContext());
+        TimeSlotAdapter adapter = new TimeSlotAdapter(getContext(), totalCapacity);
         recycler_time_slot.setAdapter(adapter);
 
         dialog.dismiss();
     }
 }
+

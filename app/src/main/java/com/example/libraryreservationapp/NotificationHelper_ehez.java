@@ -32,8 +32,8 @@ public class NotificationHelper_ehez extends ContextWrapper {
     }
     public NotificationCompat.Builder getChannelNotification() {
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
-                .setContentTitle("Upcoming Reservation!")
-                .setContentText("You have a reservation in an hour.")
+                .setContentTitle("강의실 예약 알림")
+                .setContentText("1시간 후에 강의실 예약이 있습니다")
                 .setSmallIcon(R.drawable.ic_baseline_sensor_door_40);
     }
 }

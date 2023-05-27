@@ -13,13 +13,16 @@
             android:icon="@drawable/ic_baseline_meeting_room_24"
             android:title="@string/reserve_room" />
         <item
-            android:id="@+id/nav_reserve_book"
+            android:id="@+id/nav_board"
             android:icon="@drawable/ic_baseline_book_24"
             android:title="@string/reserve_book" />
     </group>
 
     <item android:title="OTHER">
         <menu>
+            <item
+                android:id="@+id/nav_mypage"
+                android:title="@string/mypage" />
             <item
                 android:id="@+id/nav_logout"
                 android:title="@string/logout" />
