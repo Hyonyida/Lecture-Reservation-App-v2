@@ -112,7 +112,7 @@
         android:id="@+id/btn_confirm"
         android:layout_marginTop="8dp"
         android:background="@color/colorButton"
-        android:text="CONFIRM"
+        android:text="예약확인"
         android:textColor="@android:color/white"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal|center_horizontal"/>

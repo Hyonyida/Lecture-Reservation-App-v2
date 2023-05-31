@@ -277,7 +277,7 @@ public class Step3Fragment extends Fragment {
         String month = String.format("%02d", monthNum);
 
         //creates the string of how the date is stored in the reservation part of the system
-        String date = month + "_" + day + "_" + year;
+        String date = year + "_" + month + "_" + day;
 
         String timeSlot = String.valueOf(Common.currentTimeSlot);
         String userID = Common.userID;

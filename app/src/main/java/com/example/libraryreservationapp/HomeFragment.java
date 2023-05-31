@@ -241,7 +241,7 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
                         Toast.makeText(getContext(), "이용 시작", Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(getContext(), "Couldn't check you in/out", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "아직 이용할 시간이 되지 않았습니다", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

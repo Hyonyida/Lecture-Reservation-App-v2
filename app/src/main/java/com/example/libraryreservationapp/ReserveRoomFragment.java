@@ -162,7 +162,7 @@ public class ReserveRoomFragment extends Fragment {
         List<String> stepList = new ArrayList<>();
         stepList.add("강의실");
         stepList.add("시간대");
-        stepList.add("예약 확인");
+        stepList.add("예약확인");
         stepView.setSteps(stepList);
     }
 

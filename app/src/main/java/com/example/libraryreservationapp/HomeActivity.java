@@ -172,7 +172,8 @@ public class HomeActivity extends AppCompatActivity {
                         ft.replace(R.id.fragment_container, new ReserveRoomFragment()).addToBackStack("parent").commit();
                         break;
                     case R.id.nav_board:
-                        ft.replace(R.id.fragment_container, new BoardFragment()).addToBackStack("parent").commit();
+                        Intent boardIntent = new Intent(HomeActivity.this, ListActivity.class);
+                        startActivity(boardIntent);
                         break;
                 }
                 //closes the drawer

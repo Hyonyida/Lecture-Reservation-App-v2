@@ -50,7 +50,7 @@
 
         <Button
             android:id="@+id/btn_previous_step"
-            android:text="Previous"
+            android:text="이전"
             android:enabled="false"
             android:fontFamily="@font/belleza"
             android:layout_centerHorizontal="true"
@@ -66,7 +66,7 @@
         <Button
             android:id="@+id/btn_next_step"
             android:enabled="false"
-            android:text="Next"
+            android:text="다음"
             android:fontFamily="@font/belleza"
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/txt_skip"

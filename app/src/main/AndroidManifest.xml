@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ListActivity"></activity>
         <activity android:name=".ViewReviews"></activity>
         <activity android:name=".RoomsRating" />
         <activity android:name=".AdminHomeActivity" />

@@ -65,14 +65,8 @@ public class RoomsRating extends AppCompatActivity {
         FirebaseDB();
 
         // Passing values:
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         txtReviewRoom = (TextView) findViewById(R.id.txtReviewRoom);
         btnSubmitReview = (Button) findViewById(R.id.btnSubmitReview);
-
-        // Sets number of stars:
-        ratingBar.setNumStars(5);
-        // Sets default rating to 3.5 as float:
-        ratingBar.setRating((float) 3.0);
 
         // Calls all the actions when button is clicked
         getReviews();
@@ -111,18 +105,6 @@ public class RoomsRating extends AppCompatActivity {
 
 //-----------------------------------------------------------------------------------------------------------------
 
-//                .::::: Rating Bar Section :::::.
-
-                // Creates an int to get number os stars:
-                int totalNumOfStars = ratingBar.getNumStars();
-                // Creates float to get Rating Value:
-                float RatedValue = ratingBar.getRating();
-
-                // Toast message displaying picked ratings out of /5
-                Toast.makeText(getApplicationContext(), "Your rating: " + RatedValue + "/" + totalNumOfStars, Toast.LENGTH_SHORT).show();
-
-//-----------------------------------------------------------------------------------------------------------------
-
 //                  .:::: Creating a review into DB ::::.
 
                 // Gets the userid of the current user:
@@ -135,7 +117,6 @@ public class RoomsRating extends AppCompatActivity {
                     // Creates a hashmap to store reviews
                     Map<String, Object> roomReviews = new HashMap<>();
                     roomReviews.put(KEY_REVIEW , test_review);
-                    roomReviews.put(KEY_RATING, RatedValue);
                     roomReviews.put(KEY_USER_ID, userID);
                     roomReviews.put(KEY_EMAIL, email);
 
