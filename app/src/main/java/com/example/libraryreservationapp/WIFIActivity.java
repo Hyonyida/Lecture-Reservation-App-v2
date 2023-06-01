@@ -171,7 +171,6 @@ public class WIFIActivity extends AppCompatActivity
                         Log.d(TAG, "failed to connect to server " + serverIP);
                         mConnectionStatus.setText("failed to connect to server "  + serverIP);
                     }
-
                 }
             });
         }
