@@ -38,68 +38,68 @@ public class WIFIActivity extends AppCompatActivity
     private BufferedReader mIn;
     private Thread mReceiverThread = null;
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_test);
+//
+//    @Override
+//    public void onCreate(Bundle savedInstanceState)
+//    {
+//        super.onCreate(savedInstanceState);
+////        setContentView(R.layout.activity_test);
+////
+////
+////        mConnectionStatus = (TextView)findViewById(R.id.connection_status_textview);
+////        mInputEditText = (EditText)findViewById(R.id.input_string_edittext);
+////        ListView mMessageListview = (ListView) findViewById(R.id.message_listview);
+////        Button sendButton = (Button)findViewById(R.id.send_button);
+////        sendButton.setOnClickListener(new View.OnClickListener(){
+////            public void onClick(View v){
+////
+////                String sendMessage = mInputEditText.getText().toString();
+////                if ( sendMessage.length() > 0 ) {
+////
+////                    if (!isConnected) showErrorDialog("서버로 접속된후 다시 해보세요.");
+////                    else {
+////                        new Thread(new SenderThread(sendMessage)).start();
+////                        mInputEditText.setText(" ");
+////                    }
+////                }
+////            }
+////        });
 //
 //
-//        mConnectionStatus = (TextView)findViewById(R.id.connection_status_textview);
-//        mInputEditText = (EditText)findViewById(R.id.input_string_edittext);
-//        ListView mMessageListview = (ListView) findViewById(R.id.message_listview);
-//        Button sendButton = (Button)findViewById(R.id.send_button);
-//        sendButton.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
+//        mConversationArrayAdapter = new ArrayAdapter<>( this,
+//                android.R.layout.simple_list_item_1 );
+////        mMessageListview.setAdapter(mConversationArrayAdapter);
 //
-//                String sendMessage = mInputEditText.getText().toString();
-//                if ( sendMessage.length() > 0 ) {
+////        new Thread(new ConnectThread("192.168.0.7", 8090)).start();
+//        new Thread(new ConnectThread("172.18.123.94", 8090)).start();
+//    }
 //
-//                    if (!isConnected) showErrorDialog("서버로 접속된후 다시 해보세요.");
-//                    else {
-//                        new Thread(new SenderThread(sendMessage)).start();
-//                        mInputEditText.setText(" ");
-//                    }
-//                }
-//            }
-//        });
-
-
-        mConversationArrayAdapter = new ArrayAdapter<>( this,
-                android.R.layout.simple_list_item_1 );
-//        mMessageListview.setAdapter(mConversationArrayAdapter);
-
-//        new Thread(new ConnectThread("192.168.0.7", 8090)).start();
-        new Thread(new ConnectThread("172.18.123.94", 8090)).start();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        isConnected = false;
-    }
-
-
-    private static long back_pressed;
-    @Override
-    public void onBackPressed(){
-
-        if (back_pressed + 2000 > System.currentTimeMillis()){
-            super.onBackPressed();
-
-            Log.d(TAG, "onBackPressed:");
-            isConnected = false;
-
-            finish();
-        }
-        else{
-            Toast.makeText(getBaseContext(), "한번 더 뒤로가기를 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
-            back_pressed = System.currentTimeMillis();
-        }
-
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//        isConnected = false;
+//    }
+//
+//
+//    private static long back_pressed;
+//    @Override
+//    public void onBackPressed(){
+//
+//        if (back_pressed + 2000 > System.currentTimeMillis()){
+//            super.onBackPressed();
+//
+//            Log.d(TAG, "onBackPressed:");
+//            isConnected = false;
+//
+//            finish();
+//        }
+//        else{
+//            Toast.makeText(getBaseContext(), "한번 더 뒤로가기를 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+//            back_pressed = System.currentTimeMillis();
+//        }
+//
+//    }
 
 
     private class ConnectThread implements Runnable {
