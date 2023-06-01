@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="제목입니다."
+                    android:text="캡스톤 디자인 발표"
                     />
             </LinearLayout>
             <LinearLayout
@@ -70,7 +70,7 @@
                 android:background="#eeeeee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="내용입니다."
+                android:text="캡스톤 디자인 발표 6월 27일 맞나요?\n드디어 끝나네요"
                 />
 
             <TextView

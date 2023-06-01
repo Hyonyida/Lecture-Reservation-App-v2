@@ -3,6 +3,7 @@ package com.example.libraryreservationapp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
-    EditText rName, studentId, email, password;
+    EditText rName, studentId, email, password, adminCode;
     Button btnRegister;
     Spinner spinner;
 
@@ -51,7 +52,7 @@ public class RegistrationActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnRegister = findViewById(R.id.btnRegister);
-
+        adminCode = findViewById(R.id.adminCode);
 
         spinner = findViewById(R.id.spinner_user_type);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -69,53 +70,66 @@ public class RegistrationActivity extends AppCompatActivity {
                 String pwdX = password.getText().toString();
                 int flags = 0;
 
-                if(rX.length() > 4 || rX.length() < 2 ){
+                if (rX.length() > 4 || rX.length() < 2) {
                     rName.setError("2 ~ 4글자를 입력해주세요");
                     flags++;
                 }
 
-                if(!isValidEmail(emailX)){
+                if (!isValidEmail(emailX)) {
                     email.setError("유효한 이메일 주소가 아닙니다");
                     flags++;
                 }
 
-                if(!isValidStudent(studentX)){
+                if (!isValidStudent(studentX)) {
                     studentId.setError("학번 : #########");
                     flags++;
                 }
 
-                if(pwdX.length() < 6){
+                if (pwdX.length() < 6) {
                     password.setError("6글자 이상 입력해주세요");
                     flags++;
                 }
 
-                if(rX.isEmpty()){
+                if (rX.isEmpty()) {
                     rName.setError("이름을 입력해주세요");
                     flags++;
                 }
-                if (studentX.isEmpty()){
+                if (studentX.isEmpty()) {
                     studentId.setError("학번을 입력해주세요");
                     flags++;
                 }
-                if (emailX.isEmpty()){
+                if (emailX.isEmpty()) {
                     email.setError("이메일을 입력해주세요");
                     flags++;
                 }
-                if (pwdX.isEmpty()){
+                if (pwdX.isEmpty()) {
                     password.setError("비밀번호를 입력해주세요");
                     flags++;
                 }
 
-                if (flags == 0){
+                if (typeX.equals("Admin")) {
+                    String adminCodeX = adminCode.getText().toString();
+
+                    if (!adminCodeX.equals("1234")) {
+                        adminCode.setError("잘못된 관리자 코드");
+                        flags++;
+                        adminCode.setVisibility(View.VISIBLE);
+                    } else {
+                        adminCode.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    adminCode.setVisibility(View.GONE);
+                }
+
+                if (flags == 0) {
                     //Register user in Firebase
                     mFirebaseAuth.createUserWithEmailAndPassword(emailX, pwdX).addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                FirebaseAuthException e = (FirebaseAuthException )task.getException();
-                                Toast.makeText(RegistrationActivity.this, "회원가입을 실패했습니다: "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                            else{
+                            if (!task.isSuccessful()) {
+                                FirebaseAuthException e = (FirebaseAuthException) task.getException();
+                                Toast.makeText(RegistrationActivity.this, "회원가입을 실패했습니다: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            } else {
                                 Toast.makeText(RegistrationActivity.this, "계정을 생성하였습니다", Toast.LENGTH_SHORT).show();
 
                                 //Add user information to Firestore
@@ -141,13 +155,27 @@ public class RegistrationActivity extends AppCompatActivity {
                             }
                         }
                     });
-                }
-                else{
+                } else {
                     Toast.makeText(RegistrationActivity.this, "오류 발생", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                String selectedType = adapterView.getItemAtPosition(position).toString();
+                if (selectedType.equals("Admin")) {
+                    adminCode.setVisibility(View.VISIBLE);
+                } else {
+                    adminCode.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
     }
 
     public boolean isValidEmail(String e) {

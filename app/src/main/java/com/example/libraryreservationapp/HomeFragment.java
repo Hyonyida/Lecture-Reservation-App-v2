@@ -295,6 +295,7 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
     }
 
     public void moveReservation(){
+
         //gets the room reservation
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -456,13 +457,13 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
         }
 
         //creates a pattern of the date and separates them into groups
-        Pattern patternDate = Pattern.compile("(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/([0-9]{4})");
+        Pattern patternDate = Pattern.compile("([0-9]{4})/(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])");
         Matcher matcherDate = patternDate.matcher(date);
 
         if(matcherDate.find()){
-            String month = matcherDate.group(1);
-            String day = matcherDate.group(2);
-            String year = matcherDate.group(3);
+            String month = matcherDate.group(2);
+            String day = matcherDate.group(3);
+            String year = matcherDate.group(1);
 
             //sets the calendar for the reservation date
             cal.set(Calendar.MONTH, Integer.parseInt(month));

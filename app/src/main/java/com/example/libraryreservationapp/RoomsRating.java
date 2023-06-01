@@ -38,7 +38,6 @@ public class RoomsRating extends AppCompatActivity {
     // .:::: Static and global variables declared ::::.
 
     private static final String KEY_REVIEW = "review";
-    private static final String KEY_RATING = "rating";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_USER_ID = "userid";
 
@@ -46,7 +45,6 @@ public class RoomsRating extends AppCompatActivity {
 
     private TextView txtReviewRoom;
     private Button btnSubmitReview;
-    private RatingBar ratingBar;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseFirestore db;
     private DocumentReference documentReference;
@@ -132,11 +130,11 @@ public class RoomsRating extends AppCompatActivity {
                                 {
                                     if (task.isSuccessful())
                                     {
-                                        Toast.makeText(getApplicationContext(), "Add was successful!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "감사합니다", Toast.LENGTH_SHORT).show();
                                     }
                                     else
                                     {
-                                        Toast.makeText(getApplicationContext(), "Add failed!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "오류가 발생했습니다", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
