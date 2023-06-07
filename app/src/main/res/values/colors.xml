@@ -15,4 +15,9 @@
     <color name="available">#3ACD40</color>
     <color name="student">#01EA00</color>
     <color name="admin">#E70000</color>
+
+<!--blueTooth-->
+    <color name="colorRecieveText">#00FF00</color>
+    <color name="colorSendText">#82CAFF</color>
+    <color name="colorStatusText">#FFDB58</color>
 </resources>
