@@ -433,9 +433,6 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
     public Calendar translateTimeAndDate(String time, String date){
         Calendar cal = Calendar.getInstance();
 
-        time = time.replace("a", "AM");
-        time = time.replace("p", "PM");
-
         //creates a pattern of the time and separates them into groups
         Pattern patternTime = Pattern.compile("([0-9]{1,2}):([0-9]{2})([A-Z]{2})(.*)");
         Matcher matcherTime = patternTime.matcher(time);
@@ -461,15 +458,16 @@ public class HomeFragment extends Fragment implements CheckInCheckOutDialogFragm
         Matcher matcherDate = patternDate.matcher(date);
 
         if(matcherDate.find()){
+            String year = matcherDate.group(1);
             String month = matcherDate.group(2);
             String day = matcherDate.group(3);
-            String year = matcherDate.group(1);
 
             //sets the calendar for the reservation date
+            cal.set(Calendar.YEAR, Integer.parseInt(year));
             cal.set(Calendar.MONTH, Integer.parseInt(month));
             cal.add(Calendar.MONTH, -1);
             cal.set(Calendar.DATE, Integer.parseInt(day));
-            cal.set(Calendar.YEAR, Integer.parseInt(year));
+
 
         }
 

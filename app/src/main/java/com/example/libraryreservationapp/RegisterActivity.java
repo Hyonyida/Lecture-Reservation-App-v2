@@ -13,9 +13,11 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
-
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -77,6 +79,11 @@ public class RegisterActivity extends AppCompatActivity {
                     boardData.put("userid", userId);
                     boardData.put("title", title);
                     boardData.put("content", content);
+                    boardData.put("board_seq", boardSeq); // board_seq 필드 추가
+
+                    // 현재 날짜와 시간을 문자열로 변환하여 date 필드에 저장
+                    String currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+                    boardData.put("date", currentDate);
 
                     db.collection("boards")
                             .document(String.valueOf(boardSeq)) // 문서 식별자로 board_seq 사용
@@ -97,9 +104,3 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 }
-
-
-
-
-
-

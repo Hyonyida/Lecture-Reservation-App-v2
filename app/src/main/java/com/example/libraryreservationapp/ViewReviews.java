@@ -38,7 +38,6 @@ public class ViewReviews extends AppCompatActivity {
     // .::::: Static and global variables declared (NOT USING THEM) :::::.
     private static final String TAG = "ViewReviews";
     private static final String KEY_REVIEW = "review";
-    private static final String KEY_RATING = "rating";
     private static final String EMAIL = "email";
 
 //  .::::: Variables ::::::.
@@ -90,12 +89,10 @@ public class ViewReviews extends AppCompatActivity {
 
 //                 .::::: Create Object from RoomReviews.java file :::::.
                                     RoomReviews note = reviewDoc.toObject(RoomReviews.class);
-                                    float rating = note.getRating();
                                     String review = note.getReview();
                                     String email = note.getEmail();
-                                    data += building + " Room Number: " + roomNumber
-                                            + "\nRating: \t" + rating + " Stars"
-                                            + "\nE-mail: \t" + email + "\nReview: \t" + review + "\n\n";
+                                    data += building + " 강의실 번호: " + roomNumber
+                                            + "\nE-mail: \t" + email + "\n이용 학생이 남긴 말 : \t" + review + "\n\n";
 //              .::::: Display the results into Nested Scroll View :::::.
                                     textViewData.setText(data);
                                 }

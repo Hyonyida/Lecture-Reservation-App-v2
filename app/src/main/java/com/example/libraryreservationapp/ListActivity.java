@@ -111,12 +111,25 @@ public class ListActivity extends AppCompatActivity {
 
                 for (String data : responseList) {
                     try {
-                        JSONObject jsonObject = new JSONObject(data);
-                        String title = jsonObject.optString("title");
-                        String seq = jsonObject.optString("seq");
+                        // 중괄호({}) 제거
+                        String jsonData = data.replace("{", "").replace("}", "");
+                        // 쉼표(,)로 분리하여 필드와 값을 추출
+                        String[] fields = jsonData.split(",");
+                        String title = "", seq = "";
+                        for (String field : fields) {
+                            // 등호(=)로 분리하여 필드와 값을 추출
+                            String[] pair = field.split("=");
+                            String key = pair[0].trim();
+                            String value = pair[1].trim();
+                            if (key.equals("title")) {
+                                title = value;
+                            } else if (key.equals("board_seq")) {
+                                seq = value;
+                            }
+                        }
                         titleList.add(title);
                         seqList.add(seq);
-                    } catch (JSONException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }

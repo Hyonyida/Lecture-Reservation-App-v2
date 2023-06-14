@@ -25,7 +25,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="제목"/>
+                    android:text="제목" />
 
                 <TextView
                     android:id="@+id/title_tv"
@@ -34,8 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="캡스톤 디자인 발표"
-                    />
+                    android:text="" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,7 +45,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="작성일"/>
+                    android:text="작성일" />
 
                 <TextView
                     android:id="@+id/date_tv"
@@ -55,14 +54,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="제목입니다."
-                    />
+                    android:text="" />
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="내용"/>
+                android:text="내용" />
 
             <TextView
                 android:id="@+id/content_tv"
@@ -70,22 +68,20 @@
                 android:background="#eeeeee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="캡스톤 디자인 발표 6월 27일 맞나요?\n드디어 끝나네요"
-                />
+                android:text="" />
 
             <TextView
                 android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="댓글"
-                />
+                android:text="댓글" />
 
             <LinearLayout
                 android:id="@+id/comment_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -100,12 +96,12 @@
             android:layout_height="wrap_content"
             android:background="#eeeeee"
             android:layout_weight="1"
-            android:hint="댓글 내용을 입력하세요"/>
+            android:hint="댓글 내용을 입력하세요" />
         <Button
             android:id="@+id/submit_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="8dp"
-            android:text="등록하기"/>
+            android:text="등록하기" />
     </LinearLayout>
 </LinearLayout>
