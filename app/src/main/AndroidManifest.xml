@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.libraryreservationapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- <= 30 + Xiaomi/MIUI -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" android:maxSdkVersion="30"/>
+    <!-- >= API 31 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" tools:targetApi="s" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 
     <application
         android:allowBackup="true"
@@ -25,7 +36,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SeeAccountsListActivity" />
         <activity android:name=".DisableAccountActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
